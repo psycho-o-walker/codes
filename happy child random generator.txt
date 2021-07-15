@@ -1,0 +1,48 @@
+def youroption():
+    print()
+    print("Random Selection")
+    print("-" * 30)
+    print("1. Add options")
+    print("2. Generate random selection")
+    print("3. Exit program")
+    print()
+
+
+youroption()
+
+list = []
+choice = int(input("Enter choice > "))
+
+import random
+
+while choice != 3:
+
+    if choice == 1:
+        option = input("Enter options (Enter 'Done' if you have added all options) > ")
+
+        while option != "Done":
+            list.append(option)
+            print("Added successfully!")
+            option = input("Enter options (Enter 'Done' if you have added all options) > ")
+
+        print()
+        print("Options added are: ")
+        for i in range(len(list)):
+            print(str(i + 1) + ". " + list[i])
+
+        youroption()
+        choice = int(input("Enter choice > "))
+
+    elif choice == 2:
+        selection = random.randint(0, (len(list)))
+        selected = list[selection]
+        print("Option generated: " + str(selected))
+        break
+
+    else:
+        print("Invalid choice entered.")
+
+        youroption()
+        choice = int(input("Enter choice > "))
+
+print("Thank you!")
