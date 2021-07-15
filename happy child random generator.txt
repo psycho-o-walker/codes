@@ -34,7 +34,7 @@ while choice != 3:
         choice = int(input("Enter choice > "))
 
     elif choice == 2:
-        selection = random.randint(0, (len(list)))
+        selection = random.randint(0, ((len(list))-1))
         selected = list[selection]
         print("Option generated: " + str(selected))
         break
